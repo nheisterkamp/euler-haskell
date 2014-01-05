@@ -1,19 +1,16 @@
 import Tools
 
+import Data.Numbers.Primes
 import Data.List
-import Data.Char (digitToInt, intToDigit)
-import Data.Digits
 
-primes = primesListTo 1000000
+primes' :: [Integer]
+primes' = primesListTo 1000000
 
-circularPrimes = [ x | x <- primes, rotationsPrime x == True ]
+circularPrimes :: [Integer]
+circularPrimes = [ x | x <- primes', rotationsPrime x == True ]
 
-isPrime n = elem n primes
-
-numRotations d = nub $ map (unDigits 10) (rotations (digits 10 d))
-
+rotationsPrime :: Integer -> Bool
 rotationsPrime d = all (isPrime) (numRotations d)
 
 main :: IO ()
-main =
-    putStrLn $ show $ length $ circularPrimes
+main = putStrLn $ show $ length $ circularPrimes
