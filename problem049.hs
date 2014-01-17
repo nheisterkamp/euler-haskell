@@ -14,6 +14,7 @@
 import Tools
 import Data.Numbers.Primes
 
+
 --primes' :: [Integer]
 primes' = [ x | x <- takeWhile (<= 9999) primes, x > 999 ]
 

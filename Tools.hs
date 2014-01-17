@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -O2 #-}
-
 module Tools where
 
 import Data.Numbers.Primes
@@ -14,3 +12,12 @@ rotations xs = init (zipWith (++) (tails xs) (inits xs))
 
 numRotations :: Integer -> [Integer]
 numRotations d = nub $ map (unDigits 10) (rotations (digits 10 d))
+
+numReverse :: Integer -> Integer
+numReverse n = unDigits 10 $ reverse (digits 10 n)
+
+isPalindrome :: [Integer] -> Bool
+isPalindrome s = s == (reverse s)
+
+numIsPalindrome :: Integer -> Bool
+numIsPalindrome n = isPalindrome (digits 10 n)
