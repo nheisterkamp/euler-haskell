@@ -6,8 +6,6 @@ environment: ghc-7.4.2-unstable
 cabal-file: project.cabal
 hidden-packages: ''
 version: 1
-extra-packages: ! 'Hackage: primes 0.2.1.0
-
-'
+extra-packages: ! 'Hackage: primes 0.2.1.0'
 ghc-args: []
 excluded-modules: []
