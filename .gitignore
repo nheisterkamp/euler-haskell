@@ -1,6 +1,4 @@
-*
-!*.hs
-!*.md
-!*.sh
-!change/
-!.gitignore
+bak/
+build/
+*.o
+*.hi

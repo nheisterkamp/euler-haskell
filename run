@@ -1,0 +1,23 @@
+#!/bin/sh
+run() {
+	if [ -f "${1}.hs" ]; then
+		NAME="${1}"
+	elif [ -f "problem${1}.hs" ]; then
+		NAME="problem${1}"
+	elif [ -f "problem0${1}.hs" ]; then
+		NAME="problem0${1}"
+	else
+		echo "Problem not found: ${1}"
+		exit 1
+	fi
+
+	clear
+	(
+		mkdir -p build/ &&
+		ghc -O3 "${NAME}.hs" -outputdir build/ -o build/${NAME} &&
+		echo "Running $PROBLEM ..." &&
+		time ./build/${NAME}
+	)
+}
+
+run $@
