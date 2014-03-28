@@ -17,10 +17,6 @@
 -- containing nearly two-thousand common English words, how many are triangle
 -- words?
 
---import qualified Data.Text as T
--- import qualified Data.ByteString.Lazy.Char8 as BS
---import Data.Text
-
 import Data.Char (ord)
 import Data.Set (member, fromList)
 import Data.Text (splitOn, pack, unpack)
